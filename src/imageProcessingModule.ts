@@ -15,7 +15,7 @@ const convertImage = async function (
     .toFormat('jpeg')
     .toBuffer();
   const outFile = process.cwd() + '\\assets\\thumb\\' + (fileName + '_thumb.jpg');
-  promisesfs.writeFile(outFile, outputBuffer);
+  await promisesfs.writeFile(outFile, outputBuffer);
   return outputBuffer;
 };
 
