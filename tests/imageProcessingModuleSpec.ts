@@ -9,7 +9,7 @@ describe('Test image resizing function', function () {
       fs.unlinkSync(outFile);
     }
   });
-  it('Image transform test - check if outfile exists', async function () {
+  it('Image transform test - check if thumb file exists', async function () {
     await convertImage('fjord', 200, 200);
     const outFile = process.cwd() + '\\assets\\thumb\\' + 'fjord_thumb.jpg';
     expect(fs.existsSync(outFile)).toEqual(true);

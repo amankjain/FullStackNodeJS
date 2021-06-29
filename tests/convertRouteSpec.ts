@@ -6,7 +6,7 @@ import fs from 'fs';
 /**
  * Testing get all user endpoint
  */
-describe('Test /convert endpoint -success case', function () {
+describe('Test resize endpoint -success case', function () {
   beforeEach(function () {
     //delete the file if present already in thumb directory
     const outFile = process.cwd() + '\\assets\\thumb\\' + 'fjord_thumb.jpg';
@@ -14,7 +14,7 @@ describe('Test /convert endpoint -success case', function () {
       fs.unlinkSync(outFile);
     }
   });
-  it('respond with json containing a list of all users', function (done) {
+  it('endpoint responds with resized image content', function (done) {
     request(app).get('/convert?fileName=fjord&width=200&height=200').expect(200, done);
   });
 });
