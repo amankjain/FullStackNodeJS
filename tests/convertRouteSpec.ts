@@ -1,4 +1,3 @@
-import convertRoute from '../src/convertRoute';
 import request from 'supertest';
 import app from '../src/index';
 import fs from 'fs';

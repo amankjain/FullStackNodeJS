@@ -1,4 +1,3 @@
-import { error } from 'console';
 import express from 'express';
 import convertImage from './imageProcessingModule';
 const convertRoute = express.Router();
