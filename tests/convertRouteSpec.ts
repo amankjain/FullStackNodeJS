@@ -7,14 +7,19 @@ import fs from 'fs';
  * Testing get all user endpoint
  */
 describe('Test resize endpoint -success case', function () {
+  const width = 200;
+  const height = 200;
+  const fileName = 'fjord';
+  const outFile =
+    process.cwd() + '\\assets\\thumb\\' + (fileName + '-' + width + '-' + height + '.jpg');
+
   beforeEach(function () {
     //delete the file if present already in thumb directory
-    const outFile = process.cwd() + '\\assets\\thumb\\' + 'fjord_thumb.jpg';
     if (fs.existsSync(outFile)) {
       fs.unlinkSync(outFile);
     }
   });
-  it('endpoint responds with resized image content', function (done) {
+  it('endpoint responds with 200 OK and resized image content', function (done) {
     request(app).get('/convert?fileName=fjord&width=200&height=200').expect(200, done);
   });
 });

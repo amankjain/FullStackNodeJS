@@ -14,7 +14,8 @@ const convertImage = async function (
     })
     .toFormat('jpeg')
     .toBuffer();
-  const outFile = process.cwd() + '\\assets\\thumb\\' + (fileName + '_thumb.jpg');
+  const outFile =
+    process.cwd() + '\\assets\\thumb\\' + (fileName + '-' + width + '-' + height + '.jpg');
   await promisesfs.writeFile(outFile, outputBuffer);
   return outputBuffer;
 };
