@@ -20,6 +20,6 @@ describe('Test resize endpoint -success case', function () {
     }
   });
   it('endpoint responds with 200 OK and resized image content', function (done) {
-    request(app).get('/convert?fileName=fjord&width=200&height=200').expect(200, done);
+    request(app).get(`/convert?fileName=fjord&width=${width}&height=${height}`).expect(200, done);
   });
 });
