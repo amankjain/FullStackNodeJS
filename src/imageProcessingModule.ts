@@ -1,6 +1,11 @@
 import sharp from 'sharp';
 import { promises as promisesfs } from 'fs';
 
+/*
+Actual function that uses the sharp library to resize the image.
+Returns a promise that contains the image buffer
+Waits for the file to be written to disk before leaving the function
+*/
 const convertImage = async function (
   fileName: string,
   width: number,

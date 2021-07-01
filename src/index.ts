@@ -6,6 +6,9 @@ const app = express();
 const port = 3000;
 
 app.listen(port);
+/*
+Configure end-point and cache middleware (cacheFn)
+*/
 app.use('/convert', cacheFn, convertRoute);
 app.get('/', (req, res) => {
   res.send('Home Page');

@@ -6,7 +6,7 @@ import fs from 'fs';
 /**
  * Testing get all user endpoint
  */
-describe('Test resize endpoint -success case', function () {
+describe('Test resize endpoint', function () {
   const width = 200;
   const height = 200;
   const fileName = 'fjord';
