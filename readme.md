@@ -21,6 +21,16 @@ prettier: # used to auto format code on save
 
 # Comments on top of functions explaining what the function does
 
-# Async/Await where necessary
+# Added Async/Await where necessary
 
-# try/catch where needed
+# Added try/catch where needed
+
+github:
+https://github.com/amankjain/FullStackNodeJS
+
+Scripts: npm run
+"build": "npx tsc",
+"start": "npm run build && nodemon src/index.ts",
+"test": "npm run build && npm run jasmine",
+"prettier": "prettier --config .prettierrc \"./**/\*.ts\" --write",
+"lint": "eslint \"**/\*.ts\" --ignore-pattern node_modules/"
