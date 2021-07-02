@@ -6,7 +6,7 @@ const convertRoute = express.Router();
 Implement the end-point that resizes the image.
 Exceptions are caught and internal server error (500) posted
 */
-convertRoute.get('/', async (req, res) => {
+convertRoute.get('/', async (req: express.Request, res: express.Response): Promise<void> => {
   const fileName: string = req.query.fileName as string;
   const width: number = parseInt(req.query.width as string);
   const height: number = parseInt(req.query.height as string);

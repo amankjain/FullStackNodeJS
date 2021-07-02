@@ -1,6 +1,7 @@
 import request from 'supertest';
 import app from '../src/index';
 import fs from 'fs';
+import path from 'path';
 //==================== user API test ====================
 
 /**
@@ -10,9 +11,14 @@ describe('Test resize endpoint', function () {
   const width = 200;
   const height = 200;
   const fileName = 'fjord';
-  const outFile =
-    process.cwd() + '\\assets\\thumb\\' + (fileName + '-' + width + '-' + height + '.jpg');
-
+  const outFile = path.resolve(
+    __dirname,
+    '..',
+    '..',
+    'assets',
+    'thumb',
+    fileName + '-' + width + '-' + height + '.jpg',
+  );
   beforeEach(function () {
     //delete the file if present already in thumb directory
     if (fs.existsSync(outFile)) {
